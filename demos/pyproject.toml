@@ -1,10 +1,27 @@
+[project]
+name = "fep-ai-robotics-demos"
+version = "0.1.0"
+description = "Demonstrations of Free Energy Principle and Active Inference in robotics"
+readme = "README.md"
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "matplotlib>=3.5",
+    "gymnasium>=0.29",
+    "torch>=1.12",
+    "collections-extended>=2.0"
+]
+
 [tool.poetry]
 name = "fep-ai-robotics-demos"
 version = "0.1.0"
 description = "Demonstrations of Free Energy Principle and Active Inference in robotics"
 authors = ["FEP AI Robotics Team"]
 readme = "README.md"
-packages = [{include = "active_inference_cartpole"}]
+packages = [
+    {include = "active_inference_cartpole"},
+    {include = "rl_cartpole"}
+]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
@@ -12,6 +29,8 @@ numpy = ">=1.21"
 scipy = ">=1.7"
 matplotlib = ">=3.5"
 gymnasium = ">=0.29"
+torch = ">=1.12"
+collections-extended = ">=2.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -19,6 +38,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 run-cartpole-demo = "active_inference_cartpole.main:main"
+run-rl-demo = "rl_cartpole.main:main"
 
 [tool.black]
 line-length = 88
